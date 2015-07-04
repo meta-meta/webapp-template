@@ -12,15 +12,14 @@ let Home = React.createClass({
 
 	mixins: [ImmutableOptimizations(['cursor'])],
 
-	getRoute() {
-	 	return _.last(this.context.router.getCurrentPath().split('/'));
-	},
-
 	render() {
-		let cursor = this.props.cursor.refine('account', this.getRoute());
+		let cursor = this.props.cursor.refine('account');
+
+		let url = cursor.refine('imageUrl').value;
 
 		return <Panel className="container home main-content">
-
+			<div className="avatar" style={url ? {backgroundImage: `url('${url}')`} : null} />
+			<h1>Welcome back, {cursor.refine('name').value}</h1>
 		</Panel>;
 	}
 });

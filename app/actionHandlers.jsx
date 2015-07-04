@@ -85,6 +85,15 @@ let login = (opts) => {
 
 };
 
+let googleSignOut = () => {
+    if(gapi.auth2) {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+            console.log('User signed out.');
+        });
+    }
+};
+
 const handlers = {
 
     UI: {
@@ -117,8 +126,7 @@ const handlers = {
         logout: () => {
             sessionStorage.clear();
             cursor.set(initialState);
-
-            router.replaceWith('home');
+            googleSignOut();
         }
     }
 };

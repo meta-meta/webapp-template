@@ -33,6 +33,9 @@ let Application = React.createClass({
 			if(sessionToken) {
 				let account = Cursor.build(this).refine('account');
 				account.refine('authToken').set(sessionToken);
+				account.refine('name').set(sessionStorage.getItem('name'));
+				account.refine('imageUrl').set(sessionStorage.getItem('imageUrl'));
+				account.refine('email').set(sessionStorage.getItem('email'));
 
 				return true;
 			} else {

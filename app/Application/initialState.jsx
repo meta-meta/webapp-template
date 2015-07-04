@@ -15,7 +15,7 @@ const InitialState = {
         authToken: undefined
     },
 
-    isInitialDataLoaded: false,
+    isInitialDataLoaded: true,
 
 
     ui: {},
