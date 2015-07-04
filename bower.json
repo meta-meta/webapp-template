@@ -1,0 +1,6 @@
+{
+  "name": "my-webapp",
+  "dependencies": {
+    "fullpage": "2.6.3"
+  }
+}
