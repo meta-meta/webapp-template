@@ -3,7 +3,7 @@
 @import "~bootstrap-slider/less/bootstrap-slider";
 @import "variables";
 @import "fonts";
-@import "~fullpage/jquery.fullPage.css";
+//@import "~fullpage/jquery.fullPage.css";
 
 body {
   background: lightslategray;
@@ -16,4 +16,31 @@ body {
   background: url(../images/blank-avatar.png);
   background-size: contain;
   border-radius: 50%;
+}
+
+
+.comments {
+
+  float: left;
+
+  &.outermost {
+    width: 200000px;
+  }
+}
+
+.comment-container {
+}
+
+.comment {
+  float: left;
+  width: 200px;
+
+  p {
+    width: 200px;
+  }
+
+}
+
+.color1 {
+  background: hsl(0, 50%, 50%);
 }
